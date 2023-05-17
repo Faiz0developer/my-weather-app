@@ -13,20 +13,20 @@ const WeatherData = ({ data, weather, setWeather, getWeatherData }) => {
   const dayAndMonth = `${todayDate} ${month} ${year}`;
 
   return (
-    <div className="flex w-[60%] mx-auto z-50 h-[550px] p-6 rounded-lg">
-      <div className="flex  flex-col justify-between bg-image w-[50%] p-4">
-        <div className="flex flex-col items-end">
+    <div className="flex flex-col md:flex-row w-full sm:w-11/12 lg:w-3/4 mx-auto z-50 p-6 rounded-lg mt-24">
+      <div className="flex  flex-col gap-4 justify-between bg-image w-full md:w-[50%] p-4">
+        <div className="flex flex-col items-start md:items-end">
           <h1 className="text-xl">{data.name}</h1>
           <h1>{data.sys.country}</h1>
         </div>
-        <div className="flex justify-between px-4">
+        <div className="flex justify-between sm:px-4">
           <div>
-            <h1 className="text-3xl">{time}</h1>
+            <h1 className="text-xl sm:text-3xl">{time}</h1>
             <span>
               {day},{dayAndMonth}
             </span>
           </div>
-          <h1 className="text-4xl">{data.main.temp}&deg;C</h1>
+          <h1 className="text-2xl sm:text-4xl">{data.main.temp}&deg;C</h1>
         </div>
       </div>
       <div className="bg-black bg-opacity-80 py-4 px-8 text-slate-300">
@@ -38,7 +38,7 @@ const WeatherData = ({ data, weather, setWeather, getWeatherData }) => {
           <input
             type="search"
             placeholder="search any city..."
-            className="py-2 px-1 bg-black bg-opacity-20 border-b-2 border-slate-600 text-white focus:outline-none rounded-l-md"
+            className="py-2 px-1 bg-slate-200 focus:border-2 focus:border-[#3b0764] border-b-2 border-slate-600 focus:outline-none rounded-l-md w-3/4 text-black"
             value={weather}
             onChange={(e) => setWeather(e.target.value)}
           />

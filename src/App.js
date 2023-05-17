@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <main>
+      <main className="h-[140vh]">
         <Weather />
       </main>
       <Footer />
